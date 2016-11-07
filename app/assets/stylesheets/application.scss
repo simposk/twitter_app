@@ -1,0 +1,44 @@
+$blue: #1DA1F2;
+$light_blue: #62A9E0;
+$white: #ffffff;
+
+@import "normalize";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "timeline";
+
+/*
+  Universal
+*/
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: #F5F8FA;
+}
+
+/*
+  Navigation
+*/
+
+nav {
+  padding: 0;
+  margin: 0;
+
+  .fa {
+    font-size: 1.5em;
+    color: $light_blue;
+    &:hover {
+      color: darken($light_blue, 15%);
+    }
+  }
+  input {
+    margin-top: 1em;
+    padding: .5em;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    font-size: .8em;
+  }
+}

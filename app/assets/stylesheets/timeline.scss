@@ -1,0 +1,27 @@
+.timeline {
+
+  #profile {
+    width: 100%;
+    margin: 0 12px 0 12.12436130596692%; //11.547
+    // text-align: center;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    background: $white;
+    .user {
+      img {
+        border: 3px solid $white;
+        border-radius: 5px;
+      }
+
+      p {
+        font-size: .9em;
+      }
+
+      b {
+        text-decoration: none;
+
+        font-size: 1.3em;
+      }
+    }
+  }
+}

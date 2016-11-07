@@ -1,0 +1,16 @@
+<div class="timeline">
+  <div class="row">
+    <div class="col-md-4" style="margin:0 !important; padding:0 !important;">
+      <div id="profile">
+        <div class="user">
+            <%= image_tag current_user.avatar.url(:small) %>
+            <b><%= current_user.full_name %></b>
+            <%= link_to "#" do %>
+              @<%= current_user.username %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+    <div id="main" class="col-md-7" style="background-color: blue; height: 400px; margin:0 !important; padding:0 !important;"></div>
+  </div>
+</div>
