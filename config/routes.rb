@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'timeline#index'
+  get 'static_pages/index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  authenticated :user do
+    root 'timeline#index'
+  end
+
+  root "static_pages#index"
 end
