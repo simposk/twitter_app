@@ -1,16 +1,43 @@
 <div class="timeline">
   <div class="row">
-    <div class="col-md-4" style="margin:0 !important; padding:0 !important;">
+    <div class="col-md-4" style="margin-right: 1em !important; padding:0 !important;">
       <div id="profile">
-        <div class="user">
-            <%= image_tag current_user.avatar.url(:small) %>
-            <b><%= current_user.full_name %></b>
-            <%= link_to "#" do %>
-              @<%= current_user.username %>
-            <% end %>
+        <div class="user cf">
+            <div class="avatar"><%= image_tag current_user.avatar.url(:small) %></div>
+            <div class="right">
+              <b><%= current_user.full_name %></b> <br>
+              <%= link_to "#" do %>
+                @<%= current_user.username %>
+              <% end %>
+            </div>
+        </div>
+        <div id="statistics">
+          <table>
+            <tr>
+              <th>TWEEETS</th>
+              <th>FOLLOWING</th>
+              <th>FOLLOWERS</th>
+            </tr>
+            <tr>
+              <td class="number"><%= current_user.tweets.count  %></td>
+              <td class="number">0</td>
+              <td class="number">0</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
-    <div id="main" class="col-md-7" style="background-color: blue; height: 400px; margin:0 !important; padding:0 !important;"></div>
+    <div id="main" class="col-md-7" style="padding: 0 !important;">
+      <% @tweets.each do |tweet|%>
+        <div class="tweet">
+          <div class="header cf">
+            <div class="avatar"><%= image_tag tweet.user.avatar.url(:small) %></div>
+            <strong><%= link_to tweet.user.full_name, "#" %></strong> <span>@<%= tweet.user.username %></span> <small><%= time_ago_in_words(tweet.created_at) %></small>
+            <p><%= tweet.content%></p>
+          </div>
+          <div class="footer"></div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
