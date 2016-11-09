@@ -16,8 +16,8 @@ $white: #ffffff;
 html, body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  background: #F5F8FA;
+  // overflow-x: hidden;
+  background: #F5F8FA !important;
   line-height: 1.5em;
   font-size: 100%;
 }

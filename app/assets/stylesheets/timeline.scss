@@ -1,4 +1,7 @@
 .timeline {
+  max-width: 1200px;
+  min-width: 993px;
+  margin: 0 auto;
   .row {
     width: 90%;
     margin: 0 auto;
@@ -71,6 +74,21 @@
               width: 80%;
               border: 3px solid $white;
               border-radius: 5px;
+            }
+          }
+          #links {
+            padding-left: 20%;
+            a {
+              font-size: 1.3em;
+              padding-right: 1.5em;
+              opacity: .5;
+              &:hover {
+                opacity: 1;
+                text-decoration: none;
+              }
+            }
+            .liked {
+              color: red;
             }
           }
         }

@@ -16,6 +16,19 @@ class TweetsController < ApplicationController
   def destroy
   end
 
+  def upvote
+    @tweet = Tweet.find(params[:id])
+    @tweet.upvote_by current_user
+    redirect_to root_path
+  end
+
+  def downvote
+    @tweet = Tweet.find(params[:id])
+    @tweet.downvote_by current_user
+    redirect_to :back
+  end
+
+
   private
   def tweet_params
     params.require(:tweet).permit(:content)

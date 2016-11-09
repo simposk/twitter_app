@@ -33,9 +33,24 @@
           <div class="header cf">
             <div class="avatar"><%= image_tag tweet.user.avatar.url(:small) %></div>
             <strong><%= link_to tweet.user.full_name, "#" %></strong> <span>@<%= tweet.user.username %></span> <small><%= time_ago_in_words(tweet.created_at) %></small>
-            <p><%= tweet.content%></p>
+            <p><%= tweet.content%></p> <br>
+            <div id="links">
+                <% if current_user.voted_up_for? tweet %>
+                  <%= link_to dislike_tweet_path(tweet), method: :put do %>
+                    <i class="fa fa-heart liked" aria-hidden="true"></i>
+                    <%= tweet.get_upvotes.size %>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_tweet_path(tweet), method: :put do %>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <%= tweet.get_upvotes.size %>
+                  <% end %>
+                <% end %>
+              <%= link_to "#" do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+            </div>
           </div>
-          <div class="footer"></div>
         </div>
       <% end %>
     </div>
